@@ -52,7 +52,7 @@ class IndividualsController extends Controller
             'religion' => 'bail|required',
             'marital_status' => 'bail|required',
             'mother_tongue' => 'bail|required',
-            'image' => 'mimes:jpg|max:5120'
+            'image' => 'mimes:jpg,jpeg|max:5120'
         ]);
 
         $filename=asset('profile_pictures/')."/".$request->mobile."_PP.jpg";
