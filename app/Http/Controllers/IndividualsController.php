@@ -54,7 +54,8 @@ class IndividualsController extends Controller
             'mother_tongue' => 'bail|required',
             'image' => 'mimes:jpeg,bmp,png,jpg|max:5120'
         ]);
-        $filename=$request->mobile."_PP";
+
+        $filename=asset('storage/').$request->mobile."_PP";
         Individual::create([
             'name' => $request->name,
             'gender' =>  $request->gender,
