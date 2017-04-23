@@ -52,10 +52,10 @@ class IndividualsController extends Controller
             'religion' => 'bail|required',
             'marital_status' => 'bail|required',
             'mother_tongue' => 'bail|required',
-            'image' => 'mimes:jpeg,bmp,png,jpg|max:5120'
+            'image' => 'mimes:jpg|max:5120'
         ]);
 
-        $filename=asset('profile_pictures/')."/".$request->mobile."_PP";
+        $filename=asset('profile_pictures/')."/".$request->mobile."_PP.jpg";
 
         Individual::create([
             'name' => $request->name,
@@ -72,7 +72,7 @@ class IndividualsController extends Controller
         ]);
 
         if($request->image != NULL){
-            $request->image->move(asset('/storage/profile_pictures'),$filename);
+            $request->image->move(public_path('profile_pictures'),$filename);
         }
 
         $client = new Client();
