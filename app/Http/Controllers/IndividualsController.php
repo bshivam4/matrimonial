@@ -73,6 +73,19 @@ class IndividualsController extends Controller
             $request->image->move(public_path('profile_pictures'),$filename);
         }
 
+        $client = new Client();
+        $key=env('WHIZ_API_KEY');
+
+        $res = $client->request('GET', 'https://www.whizapi.com/api/v2/util/ui/in/indian-states-list', [
+            'form_params' => [
+                'project-app-key' => $key,
+
+            ]
+        ]);
+        $states_json=$res->getBody();
+        $states=json_decode($states_json, true);
+        return view('individuals.index')->with('states', $states)->with('message', 'success');
+
     }
 
 
