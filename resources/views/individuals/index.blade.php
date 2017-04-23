@@ -3,12 +3,7 @@
 @section('content')
     <div class="container">
         <div class="panel panel-primary">
-
-                <div class="alert alert-success">
-                    <strong>Success!</strong> Indicates a successful or positive action.
-                </div>
-            
-                <div class="panel-heading"><h4>Add New User</h4></div>
+            <div class="panel-heading"><h4>Add New User</h4></div>
             <div class="panel-body">
                 <form class="form-horizontal" method="post" action="/addindividual" enctype='multipart/form-data' role="form">
                     {{csrf_field()}}
@@ -143,7 +138,7 @@
                         </div>
                     </div>
                     <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
-                        <label class="control-label col-sm-2" for="dob">Profile Picture (optional)</label>
+                        <label class="control-label col-sm-2" for="dob">Profile Picture</label>
                         <div class="col-sm-10 col-md-3">
                             <input type="file" class="form-control" name="image" value="{{ old('image') }}">
 
