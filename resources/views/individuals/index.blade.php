@@ -3,11 +3,11 @@
 @section('content')
     <div class="container">
         <div class="panel panel-primary">
-            @if($message=="initial")
+
                 <div class="alert alert-success">
                     <strong>Success!</strong> Indicates a successful or positive action.
                 </div>
-            @endif
+            
                 <div class="panel-heading"><h4>Add New User</h4></div>
             <div class="panel-body">
                 <form class="form-horizontal" method="post" action="/addindividual" enctype='multipart/form-data' role="form">
