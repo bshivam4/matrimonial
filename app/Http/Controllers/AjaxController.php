@@ -8,10 +8,11 @@ class AjaxController extends Controller
 {
     public function getCity(Request $request)
     {
+        $key=env('WHIZ_API_KEY');
         $client_city = new Client();
         $result = $client_city->request('GET', 'https://www.whizapi.com/api/v2/util/ui/in/indian-city-by-state', [
             'query' => [
-                'project-app-key' => 't7zt2a1cjx6hrzsgeebil7ff',
+                'project-app-key' => $key,
                 'stateid' =>  $request->stateID
 
             ]

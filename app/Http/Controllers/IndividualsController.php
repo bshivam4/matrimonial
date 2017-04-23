@@ -16,7 +16,7 @@ class IndividualsController extends Controller
     public function index()
     {
         $client = new Client();
-        $key='t7zt2a1cjx6hrzsgeebil7ff';
+        $key=env(WHIZ_API_KEY);
         $res = $client->request('GET', 'https://www.whizapi.com/api/v2/util/ui/in/indian-states-list', [
             'form_params' => [
                 'project-app-key' => $key,
@@ -25,7 +25,7 @@ class IndividualsController extends Controller
         ]);
         $states_json=$res->getBody();
         $states=json_decode($states_json, true);
-        return view('individuals.index')->with('states', $states);
+        return view('individuals.index')->with('states', $states)->with('message', 'initial');
 
 
     }
@@ -51,7 +51,7 @@ class IndividualsController extends Controller
             'religion' => 'bail|required',
             'marital_status' => 'bail|required',
             'mother_tongue' => 'bail|required',
-            'image' => 'bail|required|mimes:jpeg,bmp,png,jpg|max:5120'
+            'image' => 'mimes:jpeg,bmp,png,jpg|max:5120'
         ]);
         $filename=$request->mobile."_PP";
         Individual::create([
@@ -64,11 +64,13 @@ class IndividualsController extends Controller
             'religion' =>  $request->religion,
             'marital_status' =>  $request->marital_status,
             'mother_tongue' =>  $request->mother_tongue,
+            'image' => $filename,
 
         ]);
 
-
-        $request->image->move(public_path('profile_pictures'),$filename);
+        if($request->image){
+            $request->image->move(public_path('profile_pictures'),$filename);
+        }
 
     }
 
