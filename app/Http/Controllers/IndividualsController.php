@@ -55,7 +55,7 @@ class IndividualsController extends Controller
             'image' => 'mimes:jpeg,bmp,png,jpg|max:5120'
         ]);
 
-        $filename=asset('storage/').$request->mobile."_PP"->$request->image->getE;
+        $filename=asset('profile_pictures/')."/".$request->mobile."_PP"->$request->image->getE;
 
         Individual::create([
             'name' => $request->name,
