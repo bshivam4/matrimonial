@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="panel panel-primary">
-            @if($message=='initial')
+            @if($message=="initial")
                 <div class="alert alert-success">
                     <strong>Success!</strong> Indicates a successful or positive action.
                 </div>
