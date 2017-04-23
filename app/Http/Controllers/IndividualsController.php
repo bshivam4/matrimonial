@@ -55,13 +55,14 @@ class IndividualsController extends Controller
             'image' => 'mimes:jpg,jpeg|max:5120'
         ]);
 
+        $stateName=explode('|', $request->state);
         $filename=asset('profile_pictures/')."/".$request->mobile."_PP.jpg";
 
         Individual::create([
             'name' => $request->name,
             'gender' =>  $request->gender,
             'dob' =>  $request->dob,
-            'state' =>  $request->state,
+            'state' =>  $stateName[1],
             'city' =>  $request->city,
             'mobile' =>  $request->mobile,
             'religion' =>  $request->religion,
