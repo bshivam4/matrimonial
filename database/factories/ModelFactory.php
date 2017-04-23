@@ -49,6 +49,8 @@ $factory->define(App\Individual::class, function (Faker\Generator $faker) {
         'religion' => $faker->randomElement($array = array ('Hindu','Sikh','Muslim','Christian','Buddhist')),
         'marital_status' => $faker->randomElement($array = array ('Never Married','Divorced', 'Widow')),
         'mother_tongue' =>   $faker->randomElement($array = array ('Hindi','Bengali', 'Marathi','Punjabi','Sindhi')),
+        'image' =>   $faker->imageUrl($width = 500, $height = 500, 'people'),
+
 
 
     ];

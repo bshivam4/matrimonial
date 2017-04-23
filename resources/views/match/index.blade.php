@@ -14,12 +14,9 @@
                         <div class="col-md-3 col-md-offset-1 panel panel-info" style="height: 350px;">
                         <h4><b>{{$match->name}}</b></h4>
                 <br>
-                   <!-- To display some random profile pictures -->
-                    <?php
-                    $faker = Faker\Factory::create();
-                    $url = $faker->imageUrl($width = 500, $height = 500, 'people');
-                    ?>
-                    <img src="{{$url}}" class="img-circle" alt="Cinque Terre" width="150" height="150">
+
+
+                    <img src="{{$match->image}}" class="img-circle" alt="Cinque Terre" width="150" height="150">
                 <br>
                     <h4>{{$match->city}}</h4>
 
@@ -38,7 +35,7 @@
                                 <h2 class="modal-title">{{$match->name}}</h2>
                             </div>
                             <div class="modal-body">
-                                <img src="{{$url}}" class="img-circle" alt="Cinque Terre" width="250" height="250">
+                                <img src="{{$match->image}}" class="img-circle" alt="Cinque Terre" width="250" height="250">
                                 <div class="table-responsive">
                                     <br>
                                     <table class="table">

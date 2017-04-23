@@ -24,7 +24,7 @@ class CreateIndividualsTable extends Migration
             $table->string('religion');
             $table->string('marital_status');
             $table->string('mother_tongue');
-
+            $table->string('image');
             $table->timestamps();
         });
     }
