@@ -72,7 +72,7 @@ class IndividualsController extends Controller
         ]);
 
         if($request->image != NULL){
-            $request->image->move(public_path('profile_pictures'),$filename);
+            $request->image->move(asset('/profile_pictures'),$filename);
         }
 
         $client = new Client();
