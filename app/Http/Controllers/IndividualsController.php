@@ -16,7 +16,8 @@ class IndividualsController extends Controller
     public function index()
     {
         $client = new Client();
-        $key=env(WHIZ_API_KEY);
+        $key=env('WHIZ_API_KEY');
+
         $res = $client->request('GET', 'https://www.whizapi.com/api/v2/util/ui/in/indian-states-list', [
             'form_params' => [
                 'project-app-key' => $key,
