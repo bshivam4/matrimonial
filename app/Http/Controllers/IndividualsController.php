@@ -69,7 +69,7 @@ class IndividualsController extends Controller
 
         ]);
 
-        if($request->image){
+        if($request->image != NULL){
             $request->image->move(public_path('profile_pictures'),$filename);
         }
 
