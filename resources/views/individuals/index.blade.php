@@ -2,12 +2,14 @@
 
 @section('content')
     <div class="container">
+        @if($message=="success")
+            <div class="alert alert-success alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Success!</strong> Added User Successfully.
+            </div>
+        @endif
         <div class="panel panel-primary">
-            @if($message=="success")
-                <div class="alert alert-success">
-                    <strong>Success!</strong> Added User Successfully .
-                </div>
-            @endif
+
                 <div class="panel-heading"><h4>Add New User</h4></div>
             <div class="panel-body">
                 <form class="form-horizontal" method="post" action="/addindividual" enctype='multipart/form-data' role="form">
