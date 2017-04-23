@@ -8,4 +8,5 @@ function getCity(stateid){
             $("#city").html(result);
         }});
 
+
 }

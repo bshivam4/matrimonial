@@ -54,7 +54,7 @@
                             <select name="state" class="form-control" onchange="getCity(this.value)">
                                 <option selected disabled>Select State</option>
                                 @foreach($states['Data'] as $state)
-                                    <option value="{{$state['ID']}}">{{$state['Name']}} </option>
+                                    <option value="{{$state['ID']}}|{{$state['Name']}}">{{$state['Name']}} </option>
                                 @endforeach
                             </select>
                             @if ($errors->has('name'))
