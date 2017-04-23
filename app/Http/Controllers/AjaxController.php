@@ -15,7 +15,7 @@ class AjaxController extends Controller
         $result = $client_city->request('GET', 'https://www.whizapi.com/api/v2/util/ui/in/indian-city-by-state', [
             'query' => [
                 'project-app-key' => $key,
-                'stateid' =>  $stateID
+                'stateid' =>  $stateID[0]
 
             ]
         ]);
